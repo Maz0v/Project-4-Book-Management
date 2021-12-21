@@ -28,7 +28,7 @@ const createbook = async function(req, res) {
                 res.status(400).send({ status: false, Message: "Invalid request parameters, Please provide book details" })
                 return
             }
-            let { title, excerpt, userId, ISBN, category, subcategory, releasedAt } = requestBody
+            let { title, excerpt, userId, ISBN, category, subcategory, releasedAt,bookCover } = requestBody
             //validation start
             if (!isValid(title)) {
                 res.status(400).send({ status: false, msg: "tilte is required" })
@@ -90,7 +90,7 @@ const createbook = async function(req, res) {
 
             requestBody.releasedAt = new Date(requestBody.releasedAt)
             const reviews = 0
-            const bookDetails = { title, excerpt, userId, ISBN, category, subcategory, reviews, releasedAt }
+            const bookDetails = { title, excerpt, userId, ISBN, category, subcategory, reviews, releasedAt,bookCover }
             const createBook = await bookModel.create(bookDetails)
             res.status(201).send({ status: true, message: "Success", data: createBook })
         } else {
