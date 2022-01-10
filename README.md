@@ -1,6 +1,6 @@
 # Radiumplus
 
-## Project - Books Management
+## Project - Books Management System
 
 ### Key points
 - Create a group database `groupXDatabase`. You can clean the db you previously used and resue that.
